@@ -1,100 +1,100 @@
-# ============================================
-# Unreal Engine + Visual Studio Git Ignore
-# ============================================
+# ------------------------------
+# Unreal Engine 5 .gitignore
+# ------------------------------
 
-# Visual Studio
-.vs/
-*.VC.db
-*.VC.opendb
-*.sln
-*.suo
-*.opensdf
-*.sdf
-.vscode/
-.idea/
-.DS_Store
-
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic Libraries
-*.so
-*.dylib
-*.dll
-
-# Compiled Static Libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
-*.ipa
-
-# Fortran module files
-*.mod
-
-# Engine-generated project files
-*.xcodeproj
-*.xcworkspace
-.vsconfig
-
-# Source Art (do not commit raw art files)
-SourceArt/**/*.png
-SourceArt/**/*.tga
-
-# ============================================
-# Unreal Engine Specific
-# ============================================
-
-# Engine cache & build folders
-Binaries/*
-DerivedDataCache/*
-Intermediate/*
-Plugins/**/Binaries/*
-Plugins/**/Intermediate/*
-Build/*
-
-# Whitelist PakBlacklist-<BuildConfiguration>.txt files
-!Build/*/
-Build/*/**
-!Build/*/PakBlacklist*.txt
-!Build/**/*.ico
-
-# Built map data
-*_BuiltData.uasset
-
-# ============================================
-# Unreal Saved Folder — Exclude everything except config if needed
-# ============================================
-Saved/*
-!Saved/Config/        # Keep editor & game configs
-!Saved/Collections/   # Optional: keep asset collections (if you use them)
-
-# Exclude Autosaves, Logs, and Backups explicitly
-**/Saved/Autosaves/**
-**/Saved/Backup/**
-**/Saved/Logs/**
-
-# Temporary and cache files
-*.log
-*.tmp
-*.bak
-
-# ============================================
-# Misc / OS-specific
-# ============================================
+# OS-specific files
+##########################
+# Windows
 Thumbs.db
 ehthumbs.db
-desktop.ini
+Desktop.ini
+$RECYCLE.BIN/
 
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# ------------------------------
+# Visual Studio / Rider / IDE
+##########################
+.vscode/
+.idea/
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build / Binary artifacts
+##########################
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/Autosaves/
+Saved/Backup/
+Saved/Logs/
+Saved/Temp/
+Saved/Collections/  # optional — see below
+Saved/Config/WindowsEditor/
+
+# Ignore platform-specific generated folders
+##########################
+Windows/
+Mac/
+Linux/
+Android/
+iOS/
+
+# Ignore build artifacts from packaging
+##########################
+Builds/
+ScriptedBuilds/
+*_BuildData/
+*.target
+*.iostore
+*.pak
+*.ucas
+*.utoc
+
+# Ignore Unreal Engine crash/diagnostic files
+##########################
+Saved/Crashes/
+Saved/Profiling/
+Saved/DerivedDataBackendCache/
+
+# Ignore generated project files
+##########################
+*.xcodeproj
+*.xcworkspace
+*.sln
+*.VC.db
+*.VC.opendb
+*.opensdf
+*.sdf
+
+# ------------------------------
+# Optional: Keep only configs & assets you care about in Saved/
+##########################
+Saved/*
+!Saved/Config/
+!Saved/Collections/
+
+# ------------------------------
+# Custom project rules (optional)
+##########################
+# Ignore auto-generated plugin files
+Plugins/*/Binaries/
+Plugins/*/Intermediate/
+Plugins/*/Saved/
+
+# Ignore temporary build folders
+*_Build/
+Build/BatchFiles/
+
+# ------------------------------
+# Ignore Unreal Engine source if using launcher version
+##########################
+/Engine/
