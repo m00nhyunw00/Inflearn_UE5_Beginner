@@ -21,6 +21,7 @@ Intermediate/
 # Ignore all of Saved folder by default
 ##############################
 Saved/*
+파트1/UE5_BluePrint/Saved/*
 
 # ✅ Keep project settings & editor configs
 !Saved/Config/
