@@ -1,102 +1,108 @@
-# ------------------------------
-# Unreal Engine 5 .gitignore
-# ------------------------------
+##############################
+# Unreal Engine 5 Git Ignore
+# Base: Epic Games Template + Config Exception
+##############################
 
-# OS-specific files
-##########################
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
-Icon?
-._*
-
-# ------------------------------
-# Visual Studio / Rider / IDE
-##########################
+# IDE / Editor
+##############################
 .vscode/
 .idea/
-.vs/
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
 
-# Build / Binary artifacts
-##########################
+# Compiled binaries and intermediates
+##############################
 Binaries/
 DerivedDataCache/
 Intermediate/
+
+# Ignore all of Saved folder by default
+##############################
+Saved/*
+
+# ✅ Keep project settings & editor configs
+!Saved/Config/
+!Saved/Config/**
+
+# ✅ (Optional) Keep asset collections if you use them
+!Saved/Collections/
+!Saved/Collections/**
+
+# Ignore temporary & runtime files
+##############################
 Saved/Autosaves/
 Saved/Backup/
 Saved/Logs/
+Saved/StagedBuilds/
 Saved/Temp/
-Saved/Collections/  # optional — see below
-Saved/Config/WindowsEditor/
-Saved/DisasterRecovery 
-Saved/Logs
+Saved/Crashes/
+Saved/Logs/
+Saved/DisasterRecovery/
+Saved/MemoryReports/
+Saved/Profiling/
 
-# Ignore platform-specific generated folders
-##########################
+# Platform-specific generated folders
+##############################
 Windows/
 Mac/
 Linux/
 Android/
-iOS/
+IOS/
 
 # Ignore build artifacts from packaging
-##########################
+##############################
 Builds/
-ScriptedBuilds/
+Build/
+BuildData/
 *_BuildData/
+*_BuiltData/
 *.target
-*.iostore
-*.pak
-*.ucas
-*.utoc
+*.pdb
 
-# Ignore Unreal Engine crash/diagnostic files
-##########################
-Saved/Crashes/
-Saved/Profiling/
-Saved/DerivedDataBackendCache/
+# Ignore Unreal's generated file caches
+##############################
+DerivedDataCache/
+Intermediate/
+*.pch
+*.sdf
+*.tlog
+*.obj
+*.ipch
 
-# Ignore generated project files
-##########################
-*.xcodeproj
-*.xcworkspace
-*.sln
+# Ignore project backups
+##############################
+Backup/
+*.bak
+
+# Ignore Visual Studio & Rider files
+##############################
+.vs/
 *.VC.db
 *.VC.opendb
 *.opensdf
 *.sdf
+*.opendb
 
-# ------------------------------
-# Optional: Keep only configs & assets you care about in Saved/
-##########################
-Saved/*
-!Saved/Config/
-!Saved/Collections/
-
-# ------------------------------
-# Custom project rules (optional)
-##########################
-# Ignore auto-generated plugin files
+# Ignore generated plugins and binaries
+##############################
 Plugins/*/Binaries/
 Plugins/*/Intermediate/
-Plugins/*/Saved/
 
-# Ignore temporary build folders
-*_Build/
-Build/BatchFiles/
+# Ignore local config
+##############################
+*.ini~
+*.tmp
 
-# ------------------------------
-# Ignore Unreal Engine source if using launcher version
-##########################
-/Engine/
+# Ignore macOS / Windows system files
+##############################
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Optional: Ignore OneDrive sync junk
+##############################
+*.lnk
+~$*
+OneDrive*/
