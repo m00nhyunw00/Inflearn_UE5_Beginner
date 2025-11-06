@@ -26,6 +26,7 @@ Saved/*
 # ✅ Keep project settings & editor configs
 !Saved/Config/
 !Saved/Config/**
+!파트1/UE5_BluePrint/Config/
 
 # ✅ (Optional) Keep asset collections if you use them
 !Saved/Collections/
