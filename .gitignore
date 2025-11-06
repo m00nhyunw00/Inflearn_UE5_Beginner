@@ -39,6 +39,8 @@ Saved/Logs/
 Saved/Temp/
 Saved/Collections/  # optional — see below
 Saved/Config/WindowsEditor/
+Saved/DisasterRecovery 
+Saved/Logs
 
 # Ignore platform-specific generated folders
 ##########################
