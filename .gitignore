@@ -1,112 +1,154 @@
-##############################
-# Unreal Engine 5 Git Ignore
-# Base: Epic Games Template + Config Exception
-##############################
+############################################
+# Unreal Engine 5 - Monorepo .gitignore
+# 여러 Unreal 프로젝트를 하나의 Git 저장소에서 관리
+############################################
 
-# IDE / Editor
-##############################
-.vscode/
-.idea/
+
+############################################
+# Unreal Engine generated folders
+############################################
+
+# Compiled binaries
+**/Binaries/
+
+# Derived Data Cache
+**/DerivedDataCache/
+
+# Intermediate build files
+**/Intermediate/
+
+# Runtime / temporary editor files
+**/Saved/
+
+
+############################################
+# Visual Studio
+############################################
+
+**/.vs/
+
+*.sln
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
 
-# Compiled binaries and intermediates
-##############################
-Binaries/
-DerivedDataCache/
-Intermediate/
-
-# Ignore all of Saved folder by default
-##############################
-Saved/*
-파트1/UE5_BluePrint/Saved/*
-
-# ✅ Keep project settings & editor configs
-!Saved/Config/
-!Saved/Config/**
-!파트1/UE5_BluePrint/Config/
-
-# ✅ (Optional) Keep asset collections if you use them
-!Saved/Collections/
-!Saved/Collections/**
-
-# Ignore temporary & runtime files
-##############################
-Saved/Autosaves/
-Saved/Backup/
-Saved/Logs/
-Saved/StagedBuilds/
-Saved/Temp/
-Saved/Crashes/
-Saved/Logs/
-Saved/DisasterRecovery/
-Saved/MemoryReports/
-Saved/Profiling/
-
-# Platform-specific generated folders
-##############################
-Windows/
-Mac/
-Linux/
-Android/
-IOS/
-
-# Ignore build artifacts from packaging
-##############################
-Builds/
-Build/
-BuildData/
-*_BuildData/
-*_BuiltData/
-*.target
-*.pdb
-
-# Ignore Unreal's generated file caches
-##############################
-DerivedDataCache/
-Intermediate/
-*.pch
-*.sdf
-*.tlog
-*.obj
-*.ipch
-
-# Ignore project backups
-##############################
-Backup/
-*.bak
-
-# Ignore Visual Studio & Rider files
-##############################
-.vs/
 *.VC.db
 *.VC.opendb
 *.opensdf
 *.sdf
 *.opendb
 
-# Ignore generated plugins and binaries
-##############################
-Plugins/*/Binaries/
-Plugins/*/Intermediate/
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
 
-# Ignore local config
-##############################
+*.pch
+*.obj
+*.tlog
+*.ipch
+*.pdb
+
+
+############################################
+# JetBrains Rider
+############################################
+
+**/.idea/
+*.sln.iml
+
+
+############################################
+# Visual Studio Code
+############################################
+
+**/.vscode/
+
+
+############################################
+# Unreal generated / build files
+############################################
+
+*.target
+
+# 패키징 결과물을 Builds 폴더에 저장하는 경우
+**/Builds/
+
+# Cook / Stage 결과물
+**/Cooked/
+**/StagedBuilds/
+
+
+############################################
+# Unreal temporary / backup files
+############################################
+
+**/Autosaves/
+**/Backup/
+**/Logs/
+**/Temp/
+**/Crashes/
+**/DisasterRecovery/
+**/MemoryReports/
+**/Profiling/
+
+
+############################################
+# Platform generated folders
+############################################
+
+**/Windows/
+**/Mac/
+**/Linux/
+**/Android/
+**/IOS/
+
+
+############################################
+# Plugins
+############################################
+
+# 플러그인의 생성 파일
+**/Plugins/*/Binaries/
+**/Plugins/*/Intermediate/
+
+
+############################################
+# Temporary files
+############################################
+
 *.ini~
 *.tmp
+*.bak
 
-# Ignore macOS / Windows system files
-##############################
+
+############################################
+# OS files
+############################################
+
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# Optional: Ignore OneDrive sync junk
-##############################
+
+############################################
+# OneDrive / shortcuts
+############################################
+
 *.lnk
 ~$*
 OneDrive*/
 
-##############################
+
+############################################
+# IMPORTANT:
+#
+# 아래 Unreal 프로젝트 파일들은 Git에 포함됨
+#
+# Content/
+# Config/
+# Source/
+# Plugins/          (소스 및 uasset)
+# *.uproject
+# *.uplugin
+############################################
