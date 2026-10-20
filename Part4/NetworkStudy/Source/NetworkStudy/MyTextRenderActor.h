@@ -1,0 +1,18 @@
+#pragma once
+
+#include "CoreMinimal.h"
+#include "Engine/TextRenderActor.h"
+#include "MyTextRenderActor.generated.h"
+
+/**
+ * 
+ */
+UCLASS()
+class NETWORKSTUDY_API AMyTextRenderActor : public ATextRenderActor
+{
+	GENERATED_BODY()
+	
+public:
+	UFUNCTION(BlueprintCallable)
+	FString GetNetMode();
+};

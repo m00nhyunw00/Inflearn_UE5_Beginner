@@ -1,154 +1,62 @@
-############################################
-# Unreal Engine 5 - Monorepo .gitignore
-# 여러 Unreal 프로젝트를 하나의 Git 저장소에서 관리
-############################################
+# Unreal Engine generated files
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+**/Build/Receipts/
 
-
-############################################
-# Unreal Engine generated folders
-############################################
-
-# Compiled binaries
-**/Binaries/
-
-# Derived Data Cache
-**/DerivedDataCache/
-
-# Intermediate build files
-**/Intermediate/
-
-# Runtime / temporary editor files
-**/Saved/
-
-
-############################################
-# Visual Studio
-############################################
-
-**/.vs/
-
+# Visual Studio / Rider
+.vs/
+.idea/
+.vscode/
 *.sln
+*.slnx
 *.suo
-*.user
-*.userosscache
-*.sln.docstates
-
-*.VC.db
-*.VC.opendb
 *.opensdf
 *.sdf
-*.opendb
+*.VC.db
+*.VC.opendb
+*.code-workspace
 
-*.vcxproj
-*.vcxproj.filters
-*.vcxproj.user
-
-*.pch
-*.obj
-*.tlog
-*.ipch
-*.pdb
-
-
-############################################
-# JetBrains Rider
-############################################
-
-**/.idea/
-*.sln.iml
-
-
-############################################
-# Visual Studio Code
-############################################
-
-**/.vscode/
-
-
-############################################
-# Unreal generated / build files
-############################################
-
+# Build artifacts
+# Presentation artifacts and private build files
+Presentation/
 *.target
+*.modules
+*.dll
+*.exe
+*.pdb
+*.obj
+*.lib
+*.exp
+*.ilk
+*.iobj
+*.ipdb
 
-# 패키징 결과물을 Builds 폴더에 저장하는 경우
-**/Builds/
+# User-specific files
+*.user
+*.userprefs
+*.sln.docstates
 
-# Cook / Stage 결과물
-**/Cooked/
-**/StagedBuilds/
+# Unreal autosaves and backups
+Autosaves/
+Backup/
 
-
-############################################
-# Unreal temporary / backup files
-############################################
-
-**/Autosaves/
-**/Backup/
-**/Logs/
-**/Temp/
-**/Crashes/
-**/DisasterRecovery/
-**/MemoryReports/
-**/Profiling/
-
-
-############################################
-# Platform generated folders
-############################################
-
-**/Windows/
-**/Mac/
-**/Linux/
-**/Android/
-**/IOS/
-
-
-############################################
-# Plugins
-############################################
-
-# 플러그인의 생성 파일
-**/Plugins/*/Binaries/
-**/Plugins/*/Intermediate/
-
-
-############################################
-# Temporary files
-############################################
-
-*.ini~
-*.tmp
-*.bak
-
-
-############################################
 # OS files
-############################################
-
 .DS_Store
 Thumbs.db
-desktop.ini
+Desktop.ini
 
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
 
-############################################
-# OneDrive / shortcuts
-############################################
+# Machine-specific MCP configuration
+**/.codex/config.toml
 
-*.lnk
-~$*
-OneDrive*/
+# RiderLink: installed separately on each PC
+**/Plugins/Developer/RiderLink/
 
-
-############################################
-# IMPORTANT:
-#
-# 아래 Unreal 프로젝트 파일들은 Git에 포함됨
-#
-# Content/
-# Config/
-# Source/
-# Plugins/          (소스 및 uasset)
-# *.uproject
-# *.uplugin
-############################################
+# Blender backup files
+*.blend[0-9]*

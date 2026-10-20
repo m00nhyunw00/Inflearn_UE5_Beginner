@@ -1,0 +1,62 @@
+# Unreal Engine generated files
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+**/Build/Receipts/
+
+# Visual Studio / Rider
+.vs/
+.idea/
+.vscode/
+*.sln
+*.slnx
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+*.code-workspace
+
+# Build artifacts
+# Presentation artifacts and private build files
+Presentation/
+*.target
+*.modules
+*.dll
+*.exe
+*.pdb
+*.obj
+*.lib
+*.exp
+*.ilk
+*.iobj
+*.ipdb
+
+# User-specific files
+*.user
+*.userprefs
+*.sln.docstates
+
+# Unreal autosaves and backups
+Autosaves/
+Backup/
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Machine-specific MCP configuration
+**/.codex/config.toml
+
+# RiderLink: installed separately on each PC
+**/Plugins/Developer/RiderLink/
+
+# Blender backup files
+*.blend[0-9]*
