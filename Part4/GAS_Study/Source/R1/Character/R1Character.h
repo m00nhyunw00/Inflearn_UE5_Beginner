@@ -52,14 +52,14 @@ public:
 	UPROPERTY(BlueprintReadWrite)
 	ECreatureState CreatureState = ECreatureState::Moving;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int32 Hp = 100;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int32 MaxHp = 100;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int32 FinalDamage = 10;
+	// UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	// int32 Hp = 100;
+	//
+	// UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	// int32 MaxHp = 100;
+	//
+	// UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	// int32 FinalDamage = 10;
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -68,4 +68,7 @@ public:
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	TObjectPtr<class UR1AbilitySystemComponent> AbilitySystemComponent;
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	TObjectPtr<class UR1AttributeSet> AttributeSet;
 };
