@@ -40,6 +40,18 @@ void AR1Player::BeginPlay()
 {
 	Super::BeginPlay();
 
+	// TEMP
+	if (TestEffect && AbilitySystemComponent)
+	{
+		FGameplayEffectContextHandle EffectContext = AbilitySystemComponent->MakeEffectContext();
+		EffectContext.AddSourceObject(this);
+		
+		// Handle
+		FGameplayEffectSpecHandle EffectSpecHandle = AbilitySystemComponent->MakeOutgoingSpec(TestEffect, 1, EffectContext);
+		
+		// Apply
+		AbilitySystemComponent->ApplyGameplayEffectSpecToSelf(*EffectSpecHandle.Data.Get());
+	}
 }
 
 void AR1Player::PossessedBy(AController* NewController)
@@ -66,7 +78,6 @@ void AR1Player::InitAbilitySystem()
 void AR1Player::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
 void AR1Player::HandleGameplayEvent(FGameplayTag EventTag)
