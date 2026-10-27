@@ -6,6 +6,7 @@
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "R1Define.h"
+#include "AbilitySystem/R1AbilitySystemComponent.h"
 #include "Components/WidgetComponent.h"
 #include "UI/R1HpBarWidget.h"
 
@@ -89,4 +90,13 @@ void AR1Character::RefreshHpBarRatio()
 		UR1HpBarWidget* HpBar = Cast<UR1HpBarWidget>(HpBarComponent->GetUserWidgetObject());
 		HpBar->SetHpRatio(Ratio);
 	}
+}
+
+UAbilitySystemComponent* AR1Character::GetAbilitySystemComponent() const
+{
+	return AbilitySystemComponent;
+}
+
+void AR1Character::InitAbilitySystem()
+{
 }
