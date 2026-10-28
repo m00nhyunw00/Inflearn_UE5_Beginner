@@ -142,27 +142,26 @@ void AR1PlayerController::ChaseTargetAndAttack()
 	if (Direction.Length() < 250.f)
 	{
 		GEngine->AddOnScreenDebugMessage(0, 1.f, FColor::Cyan, TEXT("Attack"));
-
-		if (AttackMontage)
+		
+		if (bMousePressed)
 		{
-			if (bMousePressed)
-			{
-				//if (GetCharacter()->GetMesh()->GetAnimInstance()->Montage_IsPlaying(nullptr) == false)
-				//TargetActor->OnDamaged(R1Player->FinalDamage, R1Player);
+			//if (GetCharacter()->GetMesh()->GetAnimInstance()->Montage_IsPlaying(nullptr) == false)
+			//TargetActor->OnDamaged(R1Player->FinalDamage, R1Player);
 
-				FRotator Rotator = UKismetMathLibrary::FindLookAtRotation(R1Player->GetActorLocation(), TargetActor->GetActorLocation());
-				R1Player->SetActorRotation(Rotator);
+			FRotator Rotator = UKismetMathLibrary::FindLookAtRotation(R1Player->GetActorLocation(), TargetActor->GetActorLocation());
+			R1Player->SetActorRotation(Rotator);
+			R1Player->ActivateAbility(R1GameplayTags::Ability_Attack);
 
-				GetCharacter()->PlayAnimMontage(AttackMontage);
-				SetCreatureState(ECreatureState::Skill);
+			// GetCharacter()->PlayAnimMontage(AttackMontage);
+			SetCreatureState(ECreatureState::Skill);
 
-				TargetActor = HighlightActor;
-			}
-			else
-			{
-				TargetActor = nullptr;
-			}
+			TargetActor = HighlightActor;
 		}
+		else
+		{
+			TargetActor = nullptr;
+		}
+
 	}
 	else
 	{
